@@ -67,7 +67,7 @@ $app->get('/', function() use ($app) {
             // @TODO: Change this to use a twig template.
             // Originally "index.php"
             include_once './include.php';
-            echo "<h1>Welcome to USA Rugby's National Championship Series!</h1><a href='http://google.com'>google</a>;
+            echo "<h1>Welcome to USA Rugby's National Championship Series!</h1><a href='http://google.com'>google</a>";
 
             if (editCheck(1)) {
                 echo "<a class='btn btn-info' href='add_comp.php'>Add New Competition</a><br/>\r";
