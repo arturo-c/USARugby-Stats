@@ -91,12 +91,12 @@ $app->get('/', function() use ($app) {
 $app->get('/login', function(Request $request) use ($app) {
         echo 'testing';
         $app['session']->start();
-        echo 'more_testing';
+        
         // check if the user is already logged-in
         if (null !== ($username = $app['session']->get('username'))) {
             return $app->redirect('/');
         }
-
+echo 'more_testing';
         $client = new Client($app['session']->get('domain') . '/oauth', array(
                 'curl.CURLOPT_SSL_VERIFYPEER' => isset($app['config']['verify_peer']) ? $app['config']['verify_peer'] : TRUE,
                 'curl.CURLOPT_CAINFO' => 'assets/mozilla.pem',
