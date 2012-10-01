@@ -5,6 +5,8 @@ Feature: Login with AllPlayers
 
   Scenario: Create new account and login to AllPlayers.com.
     Given I am on homepage
+    When I follow "google"
+    Then I should see "Google Search"
     When I follow "login-allplayers"
     Then I should see "Log in"
     When I follow "Create new account"
