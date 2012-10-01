@@ -96,7 +96,7 @@ $app->get('/login', function(Request $request) use ($app) {
         if (null !== ($username = $app['session']->get('username'))) {
             return $app->redirect('/');
         }
-echo 'more_testing';
+
         $client = new Client($app['session']->get('domain') . '/oauth', array(
                 'curl.CURLOPT_SSL_VERIFYPEER' => isset($app['config']['verify_peer']) ? $app['config']['verify_peer'] : TRUE,
                 'curl.CURLOPT_CAINFO' => 'assets/mozilla.pem',
@@ -109,7 +109,7 @@ echo 'more_testing';
                 'token' => FALSE,
                 'token_secret' => FALSE,
             ));
-
+        echo 'more_TESTING';
         // if $request path !set then set to request_token
         $timestamp = time();
         $params = $oauth->getParamsToSign($client->get('request_token'), $timestamp);
