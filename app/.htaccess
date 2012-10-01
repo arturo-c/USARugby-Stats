@@ -1,5 +1,0 @@
-<IfModule rewrite_module>
-    Options -MultiViews
-
-</IfModule>
-FallbackResource /index.php

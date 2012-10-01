@@ -9,7 +9,7 @@
         },
         {
             "package": "guzzle/guzzle",
-            "version": "v2.8.6"
+            "version": "v2.8.7"
         },
         {
             "package": "pimple/pimple",
@@ -32,8 +32,8 @@
         {
             "package": "silex/silex",
             "version": "dev-master",
-            "source-reference": "810fcb19c74317289d06b531641cf5dd33f7bf6f",
-            "commit-date": "1348836914"
+            "source-reference": "fc82b4255ef081dd7d464c5320ca93a902f9190f",
+            "commit-date": "1349013590"
         },
         {
             "package": "symfony/event-dispatcher",
@@ -44,14 +44,14 @@
         {
             "package": "symfony/http-foundation",
             "version": "2.1.x-dev",
-            "source-reference": "8180a46bb25c3ab539b5ab7c83617d1cef901279",
-            "commit-date": "1348576376"
+            "source-reference": "c6d48206a04fc2aa75d396bb23f0152f33eaab0c",
+            "commit-date": "1348937790"
         },
         {
             "package": "symfony/http-kernel",
             "version": "2.1.x-dev",
-            "source-reference": "404dce298803bb617ac24967ba07a3cc8e38bef3",
-            "commit-date": "1348853105"
+            "source-reference": "1859e49f38c705b6241510dc7d577fbae65e7ca6",
+            "commit-date": "1349083395"
         },
         {
             "package": "symfony/routing",
@@ -68,8 +68,8 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "b8c917972f74da88f0e930ea32a90566739d87ac",
-            "commit-date": "1348667791"
+            "source-reference": "120cde3fa54c31047edf1cd003752ca119dec9a8",
+            "commit-date": "1348936415"
         }
     ],
     "packages-dev": [
@@ -102,8 +102,8 @@
         {
             "package": "behat/mink-extension",
             "version": "dev-master",
-            "source-reference": "37dfaecd230d601c30bfefb47d6574cd73083bc5",
-            "commit-date": "1348151819"
+            "source-reference": "7653c3ca1f35fb1b52407a08d6b5e934a8a194ae",
+            "commit-date": "1348916525"
         },
         {
             "package": "behat/mink-goutte-driver",
