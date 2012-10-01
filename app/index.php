@@ -96,9 +96,6 @@ $app->get('/login', function(Request $request) use ($app) {
         if (null !== ($username = $app['session']->get('username'))) {
             return $app->redirect('/');
         }
-        echo $app['session']->get('domain');
-        echo $app['session']->get('consumer_key');
-        echo $app['session']->get('consumer_secret');
         $client = new Client($app['session']->get('domain') . '/oauth', array(
                 'curl.CURLOPT_SSL_VERIFYPEER' => isset($app['config']['verify_peer']) ? $app['config']['verify_peer'] : TRUE,
                 'curl.CURLOPT_CAINFO' => 'assets/mozilla.pem',
@@ -114,7 +111,11 @@ $app->get('/login', function(Request $request) use ($app) {
         
         // if $request path !set then set to request_token
         $timestamp = time();
+        echo '1';
+        echo $client->get('request_token');
+        echo '2';
         $params = $oauth->getParamsToSign($client->get('request_token'), $timestamp);
+        echo '3';
         $params['oauth_signature'] = $oauth->getSignature($client->get('request_token'), $timestamp);
         $response = $client->get('request_token?' . http_build_query($params))->send();
         // Parse oauth tokens from response object
