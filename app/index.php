@@ -112,10 +112,13 @@ $app->get('/login', function(Request $request) use ($app) {
         
         // if $request path !set then set to request_token
         $timestamp = time();
+        echo '1';
         $params = $oauth->getParamsToSign($client->get('request_token'), $timestamp);
+        echo '2';
         $params['oauth_signature'] = $oauth->getSignature($client->get('request_token'), $timestamp);
+        echo '3';
         $response = $client->get('request_token?' . http_build_query($params))->send();
-
+        echo '4';
         // Parse oauth tokens from response object
         $oauth_tokens = array();
         parse_str($response->getBody(TRUE), $oauth_tokens);
@@ -123,7 +126,7 @@ $app->get('/login', function(Request $request) use ($app) {
         $app['session']->set('access_secret', $oauth_tokens['oauth_token_secret']);
 
         $authorize = '/oauth/authorize?oauth_token=' . $oauth_tokens['oauth_token'];
-        echo 'more_TESTING';
+        
         $authorize .= '&oauth_callback=' . urlencode($request->getScheme() . '://' . $request->getHost() . '/auth');
         
         return $app->redirect($app['session']->get('domain') . $authorize);
