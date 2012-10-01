@@ -6,7 +6,7 @@ branches_only:
   - master
 before_script:
   - sudo apt-get update; 
-  - sudo apt-get install apache2 libapache2-mod-php5 a2ensudo php5-curl php5-mysql;
+  - sudo apt-get install apache2 libapache2-mod-php5 php5-curl php5-mysql;
   - sudo a2enmod rewrite;
   - echo "$(curl -fsSL https://raw.github.com/gist/3813442/cf0dd5a484bdc42dace30be94bb7c6624352b1e9/gistfile1.txt)" | sudo tee /etc/apache2/sites-available/default
   - echo "FallBackResource ./index.php" > app/.htaccess
