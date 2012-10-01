@@ -11,7 +11,7 @@ before_script:
   # echo "$(curl -fsSL https://raw.github.com/gist/3803112/dfa616acb4c99e59f314d3a8dbda58d1620e7977/gistfile1.txt)" | sed -e "s,PATH,`pwd`/app,g" | sudo tee /etc/apache2/sites-available/default > /dev/null
   - echo "$(curl -fsSL https://raw.github.com/gist/3803191/d64431862354effec568d3fe7c80f2455091a94d/gistfile1.txt)" > app/.htaccess
   - sudo sed -i -e "s,/var/www,$(pwd)/app,g" /etc/apache2/sites-available/default
-  - sudo a2enmod rewrite; updatedb
+  - sudo a2enmod rewrite; sudo updatedb
   - ls /etc/apache2/mods-available
   - locate mod_rewrite.so	
   - sudo service apache2 restart
