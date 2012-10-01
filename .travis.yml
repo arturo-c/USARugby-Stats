@@ -9,7 +9,7 @@ before_script:
   - sudo apt-get install apache2 libapache2-mod-php5 php5-curl php5-mysql
   - sudo a2enmod rewrite;
   #- echo "$(curl -fsSL https://raw.github.com/gist/3813442/cf0dd5a484bdc42dace30be94bb7c6624352b1e9/gistfile1.txt)" | sudo tee /etc/apache2/sites-available/default
-  - echo "$(curl -fsSL https://raw.github.com/gist/3813442/f9b9e80bda628cae1e3a68d95e5775fbd05f0ab7/gistfile1.txt)" | sed -e "s,PATH,`pwd`/app,g" | sudo tee /etc/apache2/sites-available/default
+  - echo "$(curl -fsSL https://raw.github.com/gist/3813442/ef670806255fdd2a21b0f3f80d863035f0b4b112/gistfile1.txt)" | sed -e "s,PATH,`pwd`/app,g" | sudo tee /etc/apache2/sites-available/default
   - echo "FallBackResource ./index.php" > app/.htaccess
   #- sudo sed -i '$ a\extension=php_curl.dll' /etc/php5/apache2/php.ini
   - mysql -e 'create database usarugby'
