@@ -9,13 +9,10 @@ before_script:
   - sudo apt-get update
   - sudo apt-get install libapache2-mod-php5 --fix-missing
   # echo "$(curl -fsSL https://raw.github.com/gist/3803112/dfa616acb4c99e59f314d3a8dbda58d1620e7977/gistfile1.txt)" | sed -e "s,PATH,`pwd`/app,g" | sudo tee /etc/apache2/sites-available/default > /dev/null
-  - echo "$(curl -fsSL https://raw.github.com/gist/3803191/d64431862354effec568d3fe7c80f2455091a94d/gistfile1.txt)" > app/.htaccess
+  - echo "$(curl -fsSL https://raw.github.com/gist/3803191/c78a78de0096e219e0321f2b3cf63196dda9f0b5/gistfile1.txt)" > app/.htaccess
   - sudo sed -i -e "s,/var/www,$(pwd)/app,g" /etc/apache2/sites-available/default
   - sudo a2enmod rewrite; sudo updatedb
-  - ls /etc/apache2/mods-available
   - locate mod_rewrite.so
-  - sudo cat /etc/apache2/mods-enabled/rewrite.load
-  - sudo service apache2 restart
   - mysql -e 'create database usarugby'
   - mysql -u root -e "CREATE USER 'usarugby'@'localhost' IDENTIFIED BY 'usarugby'"
   - mysql -u root -e "GRANT ALL PRIVILEGES ON usarugby.* TO 'usarugby'@'localhost' WITH GRANT OPTION;"
