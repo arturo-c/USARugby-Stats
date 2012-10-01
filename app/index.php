@@ -91,6 +91,7 @@ $app->get('/', function() use ($app) {
 $app->get('/login', function(Request $request) use ($app) {
         echo 'testing';
         $app['session']->start();
+        echo 'more_testing';
         // check if the user is already logged-in
         if (null !== ($username = $app['session']->get('username'))) {
             return $app->redirect('/');
@@ -123,7 +124,7 @@ $app->get('/login', function(Request $request) use ($app) {
 
         $authorize = '/oauth/authorize?oauth_token=' . $oauth_tokens['oauth_token'];
         $authorize .= '&oauth_callback=' . urlencode($request->getScheme() . '://' . $request->getHost() . '/auth');
-        echo 'more_testing';
+        
         return $app->redirect($app['session']->get('domain') . $authorize);
     });
 
