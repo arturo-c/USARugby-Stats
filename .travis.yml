@@ -23,8 +23,8 @@ before_script:
   - mysql -u usarugby -pusarugby usarugby < db/data.sql
   - composer install --dev
   - sudo service apache2 restart
-  - curl -L http://127.0.0.1/login
+  - curl -L http://rugby.allplayers/login
 env:
-  - BEHAT_PARAMS='extensions[Behat%5CMinkExtension%5CExtension][base_url]=http://127.0.0.1/'
+  - BEHAT_PARAMS='extensions[Behat%5CMinkExtension%5CExtension][base_url]=http://rugby.allplayers/'
 script:
   - bin/behat --verbose
