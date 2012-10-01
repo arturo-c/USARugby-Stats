@@ -11,7 +11,7 @@ before_script:
   # echo "$(curl -fsSL https://raw.github.com/gist/3803112/dfa616acb4c99e59f314d3a8dbda58d1620e7977/gistfile1.txt)" | sed -e "s,PATH,`pwd`/app,g" | sudo tee /etc/apache2/sites-available/default > /dev/null
   - echo "$(curl -fsSL https://raw.github.com/gist/3803191/c78a78de0096e219e0321f2b3cf63196dda9f0b5/gistfile1.txt)" > app/.htaccess
   # sudo sed -i -e "s,/var/www,$(pwd)/app,g" /etc/apache2/sites-available/default
-  - sudo echo "$(curl -fsSL https://raw.github.com/gist/3813442/5444afb27a110a6e347358fe1b02de385c1c17f5/gistfile1.txt)" > /etc/apache2/extra/httpd-vhosts.conf
+  - echo "$(curl -fsSL https://raw.github.com/gist/3813442/5444afb27a110a6e347358fe1b02de385c1c17f5/gistfile1.txt)" | sudo tee /etc/apache2/sites-available/default
   - sudo a2enmod rewrite; sudo updatedb
   - sudo sed -i '$ a\127.0.0.1 rugby.allplayers www.rugby.allplayers' /etc/hosts
   - cat /etc/hosts
