@@ -111,17 +111,22 @@ $app->get('/login', function(Request $request) use ($app) {
         
         // if $request path !set then set to request_token
         $timestamp = time();
-        echo var_dump($client);
-        echo var_dump($oauth);
+        echo '1';
         $params = $oauth->getParamsToSign($client->get('request_token'), $timestamp);
+        echo '2';
         $params['oauth_signature'] = $oauth->getSignature($client->get('request_token'), $timestamp);
+        echo '3';
         $response = $client->get('request_token?' . http_build_query($params))->send();
+        echo '4';
         // Parse oauth tokens from response object
         $oauth_tokens = array();
+        echo '5';
         parse_str($response->getBody(TRUE), $oauth_tokens);
+        echo '6';
         $app['session']->set('access_token', $oauth_tokens['oauth_token']);
+        echo '7';
         $app['session']->set('access_secret', $oauth_tokens['oauth_token_secret']);
-
+        echo '8';
         $authorize = '/oauth/authorize?oauth_token=' . $oauth_tokens['oauth_token'];
         
         $authorize .= '&oauth_callback=' . urlencode($request->getScheme() . '://' . $request->getHost() . '/auth');
