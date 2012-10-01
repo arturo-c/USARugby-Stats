@@ -5,12 +5,13 @@ php:
 branches_only:
   - master
 before_script:
-  - sudo apt-get install apache2
-  - sudo apt-get update; sudo apt-get install libapache2-mod-php5; sudo a2enmod rewrite; sudo apt-get install php5-curl;
-  - echo "FallBackResource ./index.php" > app/.htaccess
+  - sudo apt-get update; 
+  - sudo apt-get install apache2 libapache2-mod-php5 a2ensudo php5-curl php5-mysql;
+  - sudo a2enmod rewrite;
   - echo "$(curl -fsSL https://raw.github.com/gist/3813442/cf0dd5a484bdc42dace30be94bb7c6624352b1e9/gistfile1.txt)" | sudo tee /etc/apache2/sites-available/default
+  - echo "FallBackResource ./index.php" > app/.htaccess
   - sudo sed -i '$ a\127.0.0.1 rugby.allplayers www.rugby.allplayers' /etc/hosts
-  - sudo sed -i '$ a\display_errors = 1 a\extension=php_curl.dll' /etc/php5/apache2/php.ini
+  - sudo sed -i '$ a\extension=php_curl.dll' /etc/php5/apache2/php.ini
   - mysql -e 'create database usarugby'
   - mysql -u root -e "CREATE USER 'usarugby'@'localhost' IDENTIFIED BY 'usarugby'"
   - mysql -u root -e "GRANT ALL PRIVILEGES ON usarugby.* TO 'usarugby'@'localhost' WITH GRANT OPTION;"
@@ -18,7 +19,6 @@ before_script:
   - mysql -u usarugby -pusarugby usarugby < db/data.sql
   - composer install --dev
   - sudo service apache2 restart
-  - curl -L "http://rugby.allplayers/login"
 env:
   - BEHAT_PARAMS='extensions[Behat%5CMinkExtension%5CExtension][base_url]=http://rugby.allplayers/'
 script:
