@@ -9,7 +9,7 @@ before_script:
   - sudo apt-get update
   - sudo apt-get install libapache2-mod-php5 --fix-missing
   # echo "$(curl -fsSL https://raw.github.com/gist/3803112/dfa616acb4c99e59f314d3a8dbda58d1620e7977/gistfile1.txt)" | sed -e "s,PATH,`pwd`/app,g" | sudo tee /etc/apache2/sites-available/default > /dev/null
-  # echo "$(curl -fsSL https://raw.github.com/gist/3803191/317d19f5aa2b751d21c772c30ac5a49e4d1000b4/gistfile1.txt)" > app/.htaccess
+  - echo "$(curl -fsSL https://raw.github.com/gist/3803191/d64431862354effec568d3fe7c80f2455091a94d/gistfile1.txt)" > app/.htaccess
   - sudo sed -i -e "s,/var/www,$(pwd)/app,g" /etc/apache2/sites-available/default
   - cat /etc/apache2/sites-available/default
   - sudo a2enmod rewrite
