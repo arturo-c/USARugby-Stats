@@ -5,3 +5,4 @@ default:
     Behat\MinkExtension\Extension:
       goutte:    ~
       selenium2: ~
+      base_url: http://rugby.allplayers
