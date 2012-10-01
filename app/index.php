@@ -123,7 +123,7 @@ $app->get('/login', function(Request $request) use ($app) {
 
         $authorize = '/oauth/authorize?oauth_token=' . $oauth_tokens['oauth_token'];
         $authorize .= '&oauth_callback=' . urlencode($request->getScheme() . '://' . $request->getHost() . '/auth');
-
+        echo 'more_testing';
         return $app->redirect($app['session']->get('domain') . $authorize);
     });
 
