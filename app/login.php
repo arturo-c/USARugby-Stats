@@ -1,4 +1,5 @@
 <?php
+echo 'jajjajajajaja';
 include_once './prepare_request.php';
 header('Location: ' . $request->getScheme() . '://' . $request->getHost());
 //Start session
