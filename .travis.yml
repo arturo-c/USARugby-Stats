@@ -6,7 +6,7 @@ branches_only:
   - master
 before_script:
   - sudo apt-get install apache2
-  - sudo apt-get update; sudo apt-get install libapache2-mod-php5; sudo a2enmod rewrite;
+  - sudo apt-get update; sudo apt-get install libapache2-mod-php5; sudo a2enmod rewrite; sudo apt-get install php5-curl;
   - echo "FallBackResource ./index.php" > app/.htaccess
   - echo "$(curl -fsSL https://raw.github.com/gist/3813442/cf0dd5a484bdc42dace30be94bb7c6624352b1e9/gistfile1.txt)" | sudo tee /etc/apache2/sites-available/default
   - sudo sed -i '$ a\127.0.0.1 rugby.allplayers www.rugby.allplayers' /etc/hosts
