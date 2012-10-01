@@ -109,13 +109,13 @@ $app->get('/login', function(Request $request) use ($app) {
                 'token' => FALSE,
                 'token_secret' => FALSE,
             ));
-        echo 'more_TESTING';
+        
         // if $request path !set then set to request_token
         $timestamp = time();
         $params = $oauth->getParamsToSign($client->get('request_token'), $timestamp);
         $params['oauth_signature'] = $oauth->getSignature($client->get('request_token'), $timestamp);
         $response = $client->get('request_token?' . http_build_query($params))->send();
-
+echo 'more_TESTING';
         // Parse oauth tokens from response object
         $oauth_tokens = array();
         parse_str($response->getBody(TRUE), $oauth_tokens);
