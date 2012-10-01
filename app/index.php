@@ -89,7 +89,6 @@ $app->get('/', function() use ($app) {
  *  Login callback for temp OAuth tokens.
  */
 $app->get('/login', function(Request $request) use ($app) {
-    echo "<h1>testing</h1>";
         $app['session']->start();
         // check if the user is already logged-in
         if (null !== ($username = $app['session']->get('username'))) {
