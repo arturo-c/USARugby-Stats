@@ -13,7 +13,8 @@ before_script:
   - sudo sed -i -e "s,/var/www,$(pwd)/app,g" /etc/apache2/sites-available/default
   - sudo a2enmod rewrite; sudo updatedb
   - ls /etc/apache2/mods-available
-  - locate mod_rewrite.so	
+  - locate mod_rewrite.so
+  - sudo cat /etc/apache2/mods-enabled/rewrite.load
   - sudo service apache2 restart
   - mysql -e 'create database usarugby'
   - mysql -u root -e "CREATE USER 'usarugby'@'localhost' IDENTIFIED BY 'usarugby'"
