@@ -24,6 +24,11 @@ $(document).ready(function() {
   if (!$('#signoff').hasClass('Finished')) {
     $('#signoff').hide();
   }
+  $("a[rel=popover]")
+      .popover({placement:"left"})
+      .click(function(e) {
+        e.preventDefault()
+      })
 
   var initDateTime = function() {
     $('.date_select').datepicker({
